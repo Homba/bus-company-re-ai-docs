@@ -1,0 +1,60 @@
+name: Quality requirement
+description: Propose a non-functional / quality requirement (NFR)
+title: "[NFR] "
+labels: ["requirement", "quality", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        An NFR needs a **measure**, a **target value** and a **verification method**.
+        "The system shall be fast" will be closed.
+  - type: dropdown
+    id: category
+    attributes:
+      label: ISO 25010 category
+      options:
+        - performance efficiency
+        - reliability
+        - security
+        - usability
+        - maintainability
+        - portability
+        - compatibility
+        - functional suitability
+        - data protection
+    validations:
+      required: true
+  - type: input
+    id: parent
+    attributes:
+      label: Parent business requirement
+      placeholder: BR-06
+    validations:
+      required: true
+  - type: input
+    id: measure
+    attributes:
+      label: Measure
+      placeholder: Time from release action to last channel acknowledgement
+    validations:
+      required: true
+  - type: input
+    id: target
+    attributes:
+      label: Target value
+      placeholder: "<= 10 s median, <= 20 s p95"
+    validations:
+      required: true
+  - type: input
+    id: verification
+    attributes:
+      label: Verification method
+      placeholder: Load test with the peak profile, then continuous production measurement
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale and consequence of missing the target
+    validations:
+      required: true

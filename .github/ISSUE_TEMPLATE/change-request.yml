@@ -1,0 +1,56 @@
+name: Change request
+description: Request a change to a baselined requirement
+title: "[CR] "
+labels: ["change-request", "needs-impact-analysis"]
+body:
+  - type: input
+    id: affected
+    attributes:
+      label: Affected requirement ids
+      placeholder: FR-012, NFR-001
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: Requested change
+      description: What should the requirement say instead?
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: Reason for the change
+      placeholder: New concession condition / defect found in review / stakeholder need changed
+    validations:
+      required: true
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: Urgency
+      options:
+        - Blocks the current sprint (48 h decision needed)
+        - Next change board is fine
+        - Phase 2 candidate
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact analysis (filled by PO and technical lead)
+      placeholder: |
+        Affected requirements:
+        Affected test cases:
+        Traceability changes:
+        Cost / schedule effect:
+        Compliance evidence affected:
+  - type: checkboxes
+    id: regulators
+    attributes:
+      label: Does the change touch a regulated constraint?
+      options:
+        - label: CON-02 concession / data delivery duty
+        - label: CON-03 accessibility
+        - label: CON-06 data protection
+        - label: CON-07 works agreement
+        - label: None of the above

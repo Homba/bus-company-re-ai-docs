@@ -1,0 +1,63 @@
+name: Functional requirement
+description: Propose a new functional requirement (FR)
+title: "[FR] "
+labels: ["requirement", "functional", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use the sentence pattern: `<condition> the system shall <verb> <object> <detail>`.
+        A requirement without a parent business requirement and an acceptance criterion
+        will be closed as incomplete.
+  - type: input
+    id: parent
+    attributes:
+      label: Parent business requirement
+      description: One or more BR ids
+      placeholder: BR-02, BR-05
+    validations:
+      required: true
+  - type: textarea
+    id: statement
+    attributes:
+      label: Requirement statement
+      placeholder: When ITCS data for a running trip is older than 90 seconds, the system shall mark that trip's estimates as stale.
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale
+      description: Why is this necessary? What breaks without it?
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Given / When / Then. At least one.
+      placeholder: |
+        Given a trip whose last update is 91 s old
+        When departures are requested
+        Then the estimate is marked stale with its age in seconds
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options: [must, should, may]
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source stakeholder
+      placeholder: STK-02
+    validations:
+      required: true
+  - type: textarea
+    id: conflicts
+    attributes:
+      label: Known conflicts or constraints
+      placeholder: Touches CON-05 (ITCS interface is fixed)
