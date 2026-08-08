@@ -33,8 +33,8 @@ helfen Analysten, Praktiken konsequent einzuhalten, die unter Zeitdruck gerne ab
 ### Benötigte Materialien
 - Jede teilnehmende Person benötigt Zugang zu Claude (claude.ai, Claude Code oder API) oder Gemini
   (AI Studio oder API)
-- Ausgangsmaterialien aus `starting-materials/` ausdrucken oder digital bereitstellen
-- Referenzlösungen aus `docs/` zum Vergleich bereithalten
+- Ausgangsmaterialien aus `ausgangsmaterial/` ausdrucken oder digital bereitstellen
+- Referenzlösungen aus `anforderungsspezifikation/` zum Vergleich bereithalten
 - Optional: Beamer für Live-Demos von Agent-Interaktionen
 
 ### Raumeinrichtung
@@ -47,7 +47,7 @@ helfen Analysten, Praktiken konsequent einzuhalten, die unter Zeitdruck gerne ab
 Der Workshop ist auf **90 Min. + Pause + 180 Min.** ausgelegt (~4,5 Stunden Instruktionszeit).
 
 **Block 1 — Grundlagen (90 Min.):**
-- Einführungspräsentation mit `intro-script.md` (20 Min.)
+- Einführungspräsentation mit `intro-skript.md` (20 Min.)
 - Setup & Demo «generisch vs. Agent» — Modul 1 (15 Min.)
 - Stakeholder-Analyse — Modul 2, komprimiert (25 Min.)
 - Business Requirements — Modul 3 (30 Min.)
@@ -75,7 +75,7 @@ Jedes Übungsmodul enthält:
 2. **Agent-Einrichtung** — der zu verwendende System Prompt mit Erläuterung der wichtigsten Designentscheide
 3. **Aufgabe** — welche Eingaben der Agent erhält und welches Ergebnis erwartet wird
 4. **Bewertungskriterien** — woran sich beurteilen lässt, ob die KI-Ausgabe ausreichend gut ist
-5. **Referenzlösung** — Verweis auf das entsprechende Artefakt in `docs/`
+5. **Referenzlösung** — Verweis auf das entsprechende Artefakt in `anforderungsspezifikation/`
 6. **Diskussionsfragen** — Fragen für die Gruppenreflexion
 
 ### Der schrittweise Verfeinerungsfluss

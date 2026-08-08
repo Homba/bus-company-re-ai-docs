@@ -1,27 +1,27 @@
-## What changed
+## Was hat sich geändert
 
-<!-- Which requirement ids were added, changed or superseded? -->
+<!-- Welche Anforderungs-IDs wurden hinzugefügt, geändert oder abgelöst? -->
 
-## Requirement quality checklist
+## Qualitätscheckliste für Anforderungen
 
-- [ ] Traces to a parent business requirement
-- [ ] Unambiguous — one possible reading, no weak wording ("fast", "user-friendly", "etc.")
-- [ ] Verifiable — acceptance criterion and verification method present
-- [ ] Atomic — one requirement per statement
-- [ ] Free of design — states *what*, not *how*
-- [ ] Consistent with the existing set — no conflicting target values
-- [ ] Uses the terms from `fallstudie/03-glossary.md` exactly
-- [ ] Priority assigned (must / should / may)
-- [ ] Source stakeholder recorded
+- [ ] Rückverfolgbar auf eine übergeordnete Geschäftsanforderung
+- [ ] Eindeutig — nur eine mögliche Lesart, keine schwache Formulierung («schnell», «benutzerfreundlich», «etc.»)
+- [ ] Überprüfbar — Abnahmekriterium und Verifikationsmethode vorhanden
+- [ ] Atomar — eine Anforderung pro Aussage
+- [ ] Frei von Design — beschreibt *was*, nicht *wie*
+- [ ] Konsistent mit dem bestehenden Set — keine widersprüchlichen Zielwerte
+- [ ] Verwendet die Begriffe aus `anforderungsspezifikation/03-glossary.md` exakt
+- [ ] Priorität zugewiesen (must / should / may)
+- [ ] Quell-Stakeholder erfasst
 
-## Traceability
+## Rückverfolgbarkeit
 
-- [ ] `fallstudie/requirements.yaml` updated
-- [ ] `fallstudie/10-traceability-matrix.md` updated
-- [ ] `tools/validate_requirements.py` passes locally
+- [ ] `requirements.yaml` aktualisiert
+- [ ] `anforderungsspezifikation/10-traceability-matrix.md` aktualisiert
+- [ ] `werkzeuge/validate_requirements.py` läuft lokal erfolgreich
 
-## Baseline impact
+## Auswirkung auf die Baseline
 
-- [ ] No baselined requirement touched
-- [ ] Baselined requirement touched — change request linked: #___
-- [ ] Regulated constraint touched (CON-02 / CON-03 / CON-06 / CON-07) — reviewer added
+- [ ] Keine baselinierte Anforderung betroffen
+- [ ] Baselinierte Anforderung betroffen — Änderungsantrag verknüpft: #___
+- [ ] Regulierte Rahmenbedingung betroffen (CON-02 / CON-03 / CON-06 / CON-07) — Reviewer hinzugefügt

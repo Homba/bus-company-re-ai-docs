@@ -19,13 +19,13 @@ jobs:
         run: python -m pip install pyyaml
 
       - name: Validate requirement register
-        run: python tools/validate_requirements.py
+        run: python werkzeuge/validate_requirements.py
 
       - name: Check every requirement id in docs exists in the register
         run: |
           python - <<'PY'
           import re, sys, pathlib, yaml
-          reg = yaml.safe_load(open("fallstudie/requirements.yaml"))
+          reg = yaml.safe_load(open("requirements.yaml"))
           known = {r["id"] for section in
                    ("business_requirements", "functional_requirements", "quality_requirements")
                    for r in reg.get(section, [])}

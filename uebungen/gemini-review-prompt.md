@@ -1,8 +1,8 @@
 # Prompt für Gemini: Workshop-Qualitätsprüfung
 
 > **Anleitung:** Kopiere diesen gesamten Text als Nachricht in Gemini (AI Studio oder
-> gemini.google.com). Hänge anschliessend alle Dateien aus `workshop/exercises/`,
-> `workshop/starting-materials/` und `workshop/agents/` als Datei-Upload an — oder
+> gemini.google.com). Hänge anschliessend alle Dateien aus `uebungen/`,
+> `ausgangsmaterial/` und `werkzeuge/agentenbeispiele/` als Datei-Upload an — oder
 > kopiere deren Inhalt unterhalb der Markierung `---WORKSHOP-INHALT---` am Ende dieses Prompts.
 
 ---
@@ -69,7 +69,7 @@ Die Teilnehmenden erhalten:
 
 ## Referenzlösungen
 
-Als Vergleichsbasis liegt eine vollständige RE-Spezifikation vor (im `docs/`-Verzeichnis):
+Als Vergleichsbasis liegt eine vollständige RE-Spezifikation vor (im `anforderungsspezifikation/`-Verzeichnis):
 - 10 Business Requirements (BR-01 bis BR-10)
 - 30 Functional Requirements (FR-001 bis FR-030)
 - 19 Quality Requirements (NFR-001 bis NFR-019)

@@ -27,10 +27,10 @@ Als Übungsbeispiel dient **PRISMA** — ein realistisches (fiktives) Fahrgastin
 
 | # | Modul | Dauer | Eingesetzte(r) Agent(s) |
 |---|-------|-------|-------------------------|
-| — | [Einführungspräsentation](uebungen/intro-script.md) | 20 Min. | — |
-| 1 | [Setup & Demo «generisch vs. Agent»](uebungen/module-1-introduction.md) | 15 Min. | — |
-| 2 | [Stakeholder-Analyse](uebungen/module-2-stakeholder-analysis.md) | 25 Min. | Stakeholder Analyst |
-| 3 | [Business Requirements](uebungen/module-3-business-requirements.md) | 30 Min. | Requirements Elicitor |
+| — | [Einführungspräsentation](uebungen/intro-skript.md) | 20 Min. | — |
+| 1 | [Setup & Demo «generisch vs. Agent»](uebungen/modul-1-einfuehrung.md) | 15 Min. | — |
+| 2 | [Stakeholder-Analyse](uebungen/modul-2-stakeholder-analyse.md) | 25 Min. | Stakeholder Analyst |
+| 3 | [Business Requirements](uebungen/modul-3-geschaeftsanforderungen.md) | 30 Min. | Requirements Elicitor |
 
 ### Pause (15–30 Min.)
 
@@ -38,11 +38,11 @@ Als Übungsbeispiel dient **PRISMA** — ein realistisches (fiktives) Fahrgastin
 
 | # | Modul | Dauer | Eingesetzte(r) Agent(s) |
 |---|-------|-------|-------------------------|
-| 4 | [Functional & Quality Requirements](uebungen/module-4-functional-requirements.md) | 60 Min. | Requirements Refiner, Quality Attribute Analyst |
-| 5 | [Use Cases & Szenarien](uebungen/module-5-use-cases.md) *(optional)* | 35 Min. | Use Case Author |
-| 6 | [Validation & Traceability](uebungen/module-6-validation.md) | 40 Min. | Requirements Reviewer, Traceability Checker |
+| 4 | [Functional & Quality Requirements](uebungen/modul-4-funktionale-anforderungen.md) | 60 Min. | Requirements Refiner, Quality Attribute Analyst |
+| 5 | [Use Cases & Szenarien](uebungen/modul-5-anwendungsfaelle.md) *(optional)* | 35 Min. | Use Case Author |
+| 6 | [Validation & Traceability](uebungen/modul-6-validierung.md) | 40 Min. | Requirements Reviewer, Traceability Checker |
 | 7 | [Backlog & User Stories](uebungen/module-7-backlog.md) *(optional)* | 25 Min. | Story Writer |
-| 8 | [Abschluss & Reflexion](uebungen/module-8-wrapup.md) | 15 Min. | — |
+| 8 | [Abschluss & Reflexion](uebungen/modul-8-abschluss.md) | 15 Min. | — |
 |   | *Puffer / Reserve für Diskussion* | *5 Min.* | |
 
 Module mit dem Vermerk *(optional)* können bei Zeitknappheit ausgelassen werden — der Kernpfad (Module 1–4, 6, 8) deckt den gesamten RE-Lebenszyklus von der Erhebung bis zur Validierung ab. Die optionalen Module eignen sich hervorragend als Selbststudium nach dem Workshop.
@@ -51,7 +51,7 @@ Jedes Modul folgt dem gleichen Muster:
 1. **Lernen** — kurze Einführung in die RE-Technik und was einen guten Agent dafür ausmacht
 2. **Konfigurieren** — den spezialisierten Agent einrichten (System Prompt wird bereitgestellt)
 3. **Anwenden** — den Agent auf den PRISMA-Fall anwenden, mit den bereitgestellten Ausgangsmaterialien
-4. **Vergleichen** — das KI-gestützte Ergebnis mit der Referenzlösung in `fallstudie/` abgleichen
+4. **Vergleichen** — das KI-gestützte Ergebnis mit der Referenzlösung in `anforderungsspezifikation/` abgleichen
 5. **Reflektieren** — was hat der Agent gut gemacht? Wo brauchte es menschliches Urteilsvermögen?
 
 ## Verzeichnisstruktur
@@ -59,10 +59,12 @@ Jedes Modul folgt dem gleichen Muster:
 | Pfad | Zweck |
 |------|-------|
 | `ausgangsmaterial/` | Rohmaterialien für die Übungen (Projektbriefing, Interview-Transkripte) |
+| `anforderungsspezifikation/` | Vollständige Anforderungsspezifikation als Referenzlösung (12 Kapitel) |
+| `anwendungsfaelle/` | Use Cases im Cockburn-Stil |
+| `adr/` | Architecture Decision Records |
+| `backlog/` | Epics und Sprint-Planung |
 | `uebungen/` | Workshop-Leitfaden, Übungsmodule, Handouts, Fallback-Material |
-| `agentenbeispiele/` | System Prompts für 9 spezialisierte RE-Agents (Claude & Gemini kompatibel) |
-| `fallstudie/` | Vollständige RE-Artefakte als Referenzlösung (Anforderungen, Use Cases, ADRs, Backlog) |
-| `tools/` | CI-Validierungsskript für die Konsistenzprüfung von Anforderungen |
+| `werkzeuge/` | Agent-System-Prompts und CI-Validierungsskript |
 | `.github/` | Issue-Vorlagen, PR-Vorlage, CI-Workflow |
 
 ## Die PRISMA-Fallstudie (kurzer Überblick)
@@ -84,27 +86,27 @@ Jeder Agent hat einen sorgfältig erstellten System Prompt, der RE-Best-Practice
 
 | # | Agent | RE-Aufgabe | Prompt |
 |---|-------|------------|--------|
-| 1 | Stakeholder Analyst | Stakeholder identifizieren, Interessen kartieren, Konflikte erkennen | [01-stakeholder-analyst.md](agentenbeispiele/01-stakeholder-analyst.md) |
-| 2 | Requirements Elicitor | Anforderungen aus Erzählungen und Interviews extrahieren | [02-requirements-elicitor.md](agentenbeispiele/02-requirements-elicitor.md) |
-| 3 | Requirements Refiner | Anforderungen SMART, messbar und testbar machen | [03-requirements-refiner.md](agentenbeispiele/03-requirements-refiner.md) |
-| 4 | Quality Attribute Analyst | NFRs nach ISO/IEC 25010-Kategorien spezifizieren | [04-quality-attribute-analyst.md](agentenbeispiele/04-quality-attribute-analyst.md) |
-| 5 | Use Case Author | Use Cases im Cockburn-Stil mit allen Abläufen schreiben | [05-use-case-author.md](agentenbeispiele/05-use-case-author.md) |
-| 6 | Requirements Reviewer | Auf Mehrdeutigkeit, Unvollständigkeit, Inkonsistenz prüfen | [06-requirements-reviewer.md](agentenbeispiele/06-requirements-reviewer.md) |
-| 7 | Traceability Checker | Anforderungsverknüpfungen und Abdeckungslücken validieren | [07-traceability-checker.md](agentenbeispiele/07-traceability-checker.md) |
-| 8 | Story Writer | Anforderungen in sprintfähige User Stories umwandeln | [08-story-writer.md](agentenbeispiele/08-story-writer.md) |
-| 9 | Glossary Manager | Begriffe extrahieren, definieren, Synonyme und Konflikte erkennen | [09-glossary-manager.md](agentenbeispiele/09-glossary-manager.md) |
+| 1 | Stakeholder Analyst | Stakeholder identifizieren, Interessen kartieren, Konflikte erkennen | [01-stakeholder-analyst.md](werkzeuge/agentenbeispiele/01-stakeholder-analyst.md) |
+| 2 | Requirements Elicitor | Anforderungen aus Erzählungen und Interviews extrahieren | [02-requirements-elicitor.md](werkzeuge/agentenbeispiele/02-requirements-elicitor.md) |
+| 3 | Requirements Refiner | Anforderungen SMART, messbar und testbar machen | [03-requirements-refiner.md](werkzeuge/agentenbeispiele/03-requirements-refiner.md) |
+| 4 | Quality Attribute Analyst | NFRs nach ISO/IEC 25010-Kategorien spezifizieren | [04-quality-attribute-analyst.md](werkzeuge/agentenbeispiele/04-quality-attribute-analyst.md) |
+| 5 | Use Case Author | Use Cases im Cockburn-Stil mit allen Abläufen schreiben | [05-use-case-author.md](werkzeuge/agentenbeispiele/05-use-case-author.md) |
+| 6 | Requirements Reviewer | Auf Mehrdeutigkeit, Unvollständigkeit, Inkonsistenz prüfen | [06-requirements-reviewer.md](werkzeuge/agentenbeispiele/06-requirements-reviewer.md) |
+| 7 | Traceability Checker | Anforderungsverknüpfungen und Abdeckungslücken validieren | [07-traceability-checker.md](werkzeuge/agentenbeispiele/07-traceability-checker.md) |
+| 8 | Story Writer | Anforderungen in sprintfähige User Stories umwandeln | [08-story-writer.md](werkzeuge/agentenbeispiele/08-story-writer.md) |
+| 9 | Glossary Manager | Begriffe extrahieren, definieren, Synonyme und Konflikte erkennen | [09-glossary-manager.md](werkzeuge/agentenbeispiele/09-glossary-manager.md) |
 
 ## Agents verwenden
 
 Jeder Agent-Prompt funktioniert mit **Claude** (über Claude Code, API oder Konsole) oder **Gemini** (über AI Studio, API oder Vertex AI). Die Prompts sind LLM-unabhängige Systemanweisungen — einfach als System Prompt einfügen und die Interaktion starten.
 
-Siehe `agentenbeispiele/README.md` für detaillierte Einrichtungsanleitungen für beide Plattformen.
+Siehe `werkzeuge/agentenbeispiele/README.md` für detaillierte Einrichtungsanleitungen für beide Plattformen.
 
 ## Validator ausführen
 
 ```bash
 python3 -m pip install pyyaml
-python3 tools/validate_requirements.py
+python3 werkzeuge/validate_requirements.py
 ```
 
 ## Lizenz

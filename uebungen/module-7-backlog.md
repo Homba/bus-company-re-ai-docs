@@ -13,7 +13,7 @@
 ## Vorbereitung
 
 Konfigurieren Sie den **Story Writer** Agent mit dem System Prompt aus
-`workshop/agents/08-story-writer.md`.
+`werkzeuge/agentenbeispiele/08-story-writer.md`.
 
 ## Übung 1: Epics und Stories erstellen (25 Min.)
 

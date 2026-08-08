@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
   - name: Glossary question
-    url: https://github.com/Homba/bus-company-re-ai-docs/blob/main/fallstudie/03-glossary.md
+    url: https://github.com/Homba/bus-company-re-ai-docs/blob/main/anforderungsspezifikation/03-glossary.md
     about: Check the controlled vocabulary before raising a requirement issue.

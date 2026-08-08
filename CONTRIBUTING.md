@@ -1,56 +1,56 @@
-# Contributing to the PRISMA requirements
+# Beitragen zu den PRISMA-Anforderungen
 
-## Before you write a requirement
+## Bevor Sie eine Anforderung schreiben
 
-1. Read `docs/03-glossary.md`. Most review findings in this project are terminology, not logic.
-2. Find the business requirement your idea serves. If there is none, you are proposing a
-   business requirement — say so, and expect it to go to the sponsor, not to the backlog.
-3. Check `docs/09-constraints-and-compliance.md`. A requirement that violates a constraint is
-   a change request to the constraint owner, not a requirement.
+1. Lesen Sie `anforderungsspezifikation/03-glossary.md`. Die meisten Review-Befunde in diesem Projekt betreffen die Terminologie, nicht die Logik.
+2. Finden Sie die Geschäftsanforderung, der Ihre Idee dient. Gibt es keine, schlagen Sie eine
+   Geschäftsanforderung vor — sagen Sie das, und erwarten Sie, dass sie zum Sponsor geht, nicht ins Backlog.
+3. Prüfen Sie `anforderungsspezifikation/09-constraints-and-compliance.md`. Eine Anforderung, die eine Rahmenbedingung verletzt, ist
+   ein Änderungsantrag an den Verantwortlichen der Rahmenbedingung, nicht eine Anforderung.
 
-## Workflow
+## Arbeitsablauf
 
 ```
-issue (FR / NFR / CR form)
-   → discussion and refinement
-   → branch  req/FR-0xx-short-title
-   → edit docs/ and requirements/requirements.yaml together
-   → run tools/validate_requirements.py
-   → pull request with the quality checklist
-   → peer review, then walkthrough if it is a new use case or FR block
+Issue (FR- / NFR- / CR-Formular)
+   → Diskussion und Verfeinerung
+   → Branch  req/FR-0xx-kurztitel
+   → anforderungsspezifikation/ und requirements.yaml gemeinsam bearbeiten
+   → werkzeuge/validate_requirements.py ausführen
+   → Pull Request mit der Qualitätscheckliste
+   → Peer-Review, dann Walkthrough bei neuem Use Case oder FR-Block
 ```
 
-## Local checks
+## Lokale Prüfungen
 
 ```bash
 python3 -m pip install pyyaml
-python3 tools/validate_requirements.py
+python3 werkzeuge/validate_requirements.py
 ```
 
-To see the validator do its job, temporarily delete the `parents:` line from any FR and run it
-again — it should report a traceability finding and exit non-zero. This is the same check CI runs.
+Um den Validator in Aktion zu sehen, löschen Sie vorübergehend die `parents:`-Zeile aus einem beliebigen FR und führen Sie ihn
+erneut aus — er sollte einen Rückverfolgbarkeitsbefund melden und mit Non-Zero beenden. Dies ist die gleiche Prüfung, die CI ausführt.
 
-## Style rules
+## Stilregeln
 
-- One requirement per statement. If you wrote "and also", split it.
-- `shall` for binding, `should` for desirable, `may` for optional. Nothing else.
-- No product or technology names in FR/NFR text — CON-01 requires vendor neutrality.
-- Numbers belong in requirements, adjectives do not. "Fast" is a review finding.
-- Never renumber. A superseded requirement keeps its ID and points to its successor.
-- Keep German as the language of record (CON-09); if the English and German texts diverge,
-  the German wins and the English is corrected.
+- Eine Anforderung pro Aussage. Wenn Sie «und ausserdem» geschrieben haben, teilen Sie auf.
+- `shall` für verbindlich, `should` für wünschenswert, `may` für optional. Nichts anderes.
+- Keine Produkt- oder Technologienamen im FR-/NFR-Text — CON-01 verlangt Herstellerneutralität.
+- Zahlen gehören in Anforderungen, Adjektive nicht. «Schnell» ist ein Review-Befund.
+- Nie umnummerieren. Eine abgelöste Anforderung behält ihre ID und verweist auf ihren Nachfolger.
+- Deutsch als massgebliche Sprache beibehalten (CON-09); wenn der englische und der deutsche Text voneinander abweichen,
+  gewinnt der deutsche und der englische wird korrigiert.
 
-## Branch naming
+## Branch-Benennung
 
-| Kind | Pattern |
+| Art | Muster |
 |---|---|
-| New or changed requirement | `req/FR-014-correct-and-cancel` |
-| Change request | `cr/CR-07-retention-five-years` |
-| Documentation only | `docs/glossary-countdown` |
-| Tooling | `tools/validator-weak-wording` |
+| Neue oder geänderte Anforderung | `req/FR-014-correct-and-cancel` |
+| Änderungsantrag | `cr/CR-07-retention-five-years` |
+| Nur Dokumentation | `docs/glossar-countdown` |
+| Werkzeuge | `werkzeuge/validator-weak-wording` |
 
-## Review expectations
+## Erwartungen an das Review
 
-A reviewer is expected to check the ten quality criteria in
-`docs/12-review-and-change-process.md`, not just readability. "LGTM" on a requirement PR is
-not a review.
+Von einem Reviewer wird erwartet, dass er die zehn Qualitätskriterien in
+`anforderungsspezifikation/12-review-and-change-process.md` prüft, nicht nur die Lesbarkeit. «LGTM» bei einem Anforderungs-PR ist
+kein Review.

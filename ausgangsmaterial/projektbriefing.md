@@ -8,7 +8,7 @@
 ## Ausgangslage
 
 Die Regionalverkehr Bernland AG (RVB) ist ein regionales Busunternehmen in der Schweiz. Der
-Kanton Bernland hält 71 % der Aktien; die übrigen Anteile verteilen sich auf 24 Gemeinden
+Kanton Bern hält 71 % der Aktien; die übrigen Anteile verteilen sich auf 24 Gemeinden
 entlang der Linien. Die RVB betreibt 38 Buslinien gestützt auf eine Konzession des Bundesamts
 für Verkehr (BAV). Die Finanzierung erfolgt über das Bestellverfahren von Kanton und Bund.
 

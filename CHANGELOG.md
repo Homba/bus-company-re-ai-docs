@@ -1,34 +1,34 @@
-# Changelog
+# Änderungsprotokoll
 
-All notable changes to the requirement baseline.
+Alle wesentlichen Änderungen an der Anforderungsbaseline.
 
 ## [1.4] — 2026-04-22 — `baseline/srs-v1.4`
-### Added
-- FR-024…FR-026 (SIRI interfaces), FR-027…FR-030 (audit, reporting, administration) — status `review`
+### Hinzugefügt
+- FR-024…FR-026 (SIRI-Schnittstellen), FR-027…FR-030 (Audit, Reporting, Administration) — Status `review`
 - NFR-016…NFR-019
-- ADR-004 event-sourced disruption aggregate
-### Changed
-- FR-012 now forbids deselecting the national platform channel (CON-02) — CR-04
-- NFR-005 threshold tightened from 180 s to 120 s after passenger interviews — CR-05
+- ADR-004 event-sourced Störungs-Aggregat
+### Geändert
+- FR-012 verbietet jetzt das Abwählen des Kanals Nationale Plattform (CON-02) — CR-04
+- NFR-005 Schwellenwert verschärft von 180 s auf 120 s nach Fahrgastbefragungen — CR-05
 
 ## [1.3] — 2026-04-02
-### Added
+### Hinzugefügt
 - UC-005, UC-006, UC-007
 - CON-11, CON-12
-### Changed
-- Glossary: "waiting time" renamed to "countdown" across all documents (conflict C-2 resolved)
+### Geändert
+- Glossar: «Wartezeit» umbenannt in «Countdown» in allen Dokumenten (Konflikt C-2 gelöst)
 
 ## [1.2] — 2026-03-11
-### Added
-- BR-09, BR-10 following the works council consultation
-- NFR-013, NFR-014 (retention, purpose limitation)
-### Changed
-- Charter signed off; scope boundary fixed — ITCS replacement explicitly out (ADR-002)
+### Hinzugefügt
+- BR-09, BR-10 nach der Konsultation des Personalrats
+- NFR-013, NFR-014 (Aufbewahrung, Zweckbindung)
+### Geändert
+- Charta abgenommen; Scope-Grenze fixiert — ITCS-Ersatz explizit ausserhalb (ADR-002)
 
 ## [1.1] — 2026-02-26
-### Added
-- Stakeholder register with conflicts C-1…C-4
-- Risk register RSK-01…RSK-10
+### Hinzugefügt
+- Stakeholder-Register mit Konflikten C-1…C-4
+- Risikoregister RSK-01…RSK-10
 
 ## [1.0] — 2026-02-12
-- Initial draft: charter, context, BR-01…BR-08, first FR set
+- Erster Entwurf: Charta, Kontext, BR-01…BR-08, erstes FR-Set
