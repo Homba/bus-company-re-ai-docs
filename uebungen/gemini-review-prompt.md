@@ -39,7 +39,7 @@ Statt einer generischen KI erstellen die Teilnehmenden **8 spezialisierte Agents
 
 | Modul | Dauer | Inhalt | Agent |
 |-------|-------|--------|-------|
-| Modul 4: Functional & Quality Requirements | 50 Min. | BRs in FRs zerlegen (MASTeR-Muster), NFRs nach ISO 25010 spezifizieren | Requirements Refiner + Quality Attribute Analyst |
+| Modul 4: Functional & Quality Requirements | 50 Min. | BRs in FRs zerlegen (Satzschablone), NFRs nach ISO 25010 spezifizieren | Requirements Refiner + Quality Attribute Analyst |
 | Modul 5: Use Cases *(optional)* | 35 Min. | Cockburn-Use-Cases schreiben, alternative/Ausnahme-Abläufe | Use Case Author |
 | Modul 6: Validierung & Traceability | 35 Min. | Anforderungen auf Mängel prüfen, Traceability-Matrix erstellen | Requirements Reviewer + Traceability Checker |
 | Modul 7: Backlog *(optional)* | 25 Min. | Epics und User Stories mit INVEST-Kriterien ableiten | Story Writer |
@@ -54,7 +54,7 @@ Statt einer generischen KI erstellen die Teilnehmenden **8 spezialisierte Agents
 |---|-------|------------|-------------------|
 | 1 | Stakeholder Analyst | Stakeholder identifizieren, Interessen/Einfluss bewerten, Konflikte erkennen | RACI, Influence/Interest-Mapping |
 | 2 | Requirements Elicitor | Business Requirements aus Narrativen extrahieren | ISO 29148, SMART-Ziele |
-| 3 | Requirements Refiner | Anforderungen präzisieren und testbar machen | MASTeR-Satzmuster, Weak-Word-Detection |
+| 3 | Requirements Refiner | Anforderungen präzisieren und testbar machen | Satzschablone, Weak-Word-Detection |
 | 4 | Quality Attribute Analyst | NFRs identifizieren und quantifizieren | ISO/IEC 25010, Messbarkeit |
 | 5 | Use Case Author | Use Cases mit allen Abläufen schreiben | Cockburn-Methodik |
 | 6 | Requirements Reviewer | Anforderungen auf Mängel inspizieren | Perspektivenbasiertes Lesen, IEEE 29148 |

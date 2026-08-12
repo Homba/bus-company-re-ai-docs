@@ -7,7 +7,7 @@ Im Verlauf dieses Workshops haben Sie:
 1. **Stakeholder analysiert** — von einem rohen Projektbriefing zu einem strukturierten
    Register mit Konflikterkennung
 2. **Business Requirements erhoben** — messbare Ziele aus Erzählungen extrahiert
-3. **Zu Functional und Quality Requirements verfeinert** — unter Anwendung von MASTeR-Mustern,
+3. **Zu Functional und Quality Requirements verfeinert** — unter Anwendung der Satzschablone,
    ISO 25010 und Qualitätskriterien
 4. **Use Cases geschrieben** — im Cockburn-Stil mit alternativen und Ausnahmeabläufen
 5. **Validiert und nachverfolgt** — Artefakte auf Mängel geprüft und Abdeckung verifiziert
@@ -22,7 +22,7 @@ KI-Chat.
 ### 1. Agents sind Methodenträger, keine Magie
 
 Die von Ihnen verwendeten System Prompts kodieren jahrzehntelange RE-Praxis: ISO 29148,
-ISO 25010, Cockburn, MASTeR-Muster, INVEST-Kriterien. Die KI «kennt» Requirements Engineering
+ISO 25010, Cockburn, Satzschablone, INVEST-Kriterien. Die KI «kennt» Requirements Engineering
 nicht — sie folgt der Methodik, die Sie ihr vorgeben. Ein besserer Prompt liefert deutlich
 bessere Ergebnisse.
 
@@ -115,4 +115,4 @@ Schreiben Sie Ihre Antworten auf:
 - **ISO/IEC/IEEE 29148:2018:** Standard für Requirements Engineering
 - **ISO/IEC 25010:** Software-Qualitätsmodell
 - **Cockburn, A. «Writing Effective Use Cases»** — die in diesem Workshop verwendete Use-Case-Methodik
-- **Robertson & Robertson, «Mastering the Requirements Process»** — MASTeR-Satzmuster
+- **Chris Rupp, «Requirements-Engineering und -Management»** — Satzschablone (Anforderungsschablone)

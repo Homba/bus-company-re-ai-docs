@@ -138,6 +138,21 @@
 
 ---
 
+### RACI-Matrix
+
+| Aktivität | STK-01 | STK-02 | STK-03 | STK-04 | STK-05 | STK-06 | STK-07 | STK-08 | STK-09 | STK-10 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Anforderungsspezifikation | A | R | C | C | I | I | C | C | I | C |
+| Architekturentscheide | A | C | I | I | — | I | I | — | I | C |
+| Beschaffung | A | C | — | — | — | — | I | — | I | — |
+| Testing / Abnahme | I | A | R | C | I | I | I | R | I | C |
+| Deployment / Go-Live | A | R | C | I | I | I | C | I | I | I |
+| Change Requests | A | R | C | C | — | I | C | C | I | C |
+
+*Legende: R = Responsible, A = Accountable, C = Consulted, I = Informed, — = nicht beteiligt*
+
+---
+
 ## Modul 3: Business Requirements
 
 *Simulierte Ausgabe des Requirements Elicitor Agent auf Basis des Projektbriefings, der Interviewprotokolle und des Stakeholder-Registers.*
@@ -156,7 +171,9 @@ Die RVB soll pro Betriebsstörung genau einen massgeblichen Datensatz führen, a
 - **Baseline:** 27 % der Störungen werden mit inkonsistentem Wortlaut über die verschiedenen Kanäle kommuniziert (Jan.–Jun. 2025)
 - **Zielwert:** ≥ 99 % der Störungen mit identischem Kerninhalt auf allen Kanälen
 - **Quelle:** STK-01 (Leiter Betrieb), STK-04 (Kundendienst)
+- **Begründung:** Widersprüchliche Meldungen über verschiedene Kanäle verwirren die Fahrgäste und untergraben das Vertrauen in die Information. Der Kundendienst kann keine kompetente Auskunft geben, wenn er nicht weiss, was auf welchem Kanal steht.
 - **Priorität:** must
+- **Status:** draft
 
 ---
 
@@ -168,7 +185,9 @@ Die RVB soll die Zeit zwischen dem Bekanntwerden einer Störung in der Leitstell
 - **Baseline:** 11 Min. 40 Sek. medianer Verzug (Jan.–Jun. 2025)
 - **Zielwert:** ≤ 3 Min. (Median), ≤ 8 Min. (95. Perzentil)
 - **Quelle:** STK-01 (Leiter Betrieb), STK-05 (Fahrgäste)
+- **Begründung:** Ein medianer Verzug von fast 12 Minuten bedeutet, dass Fahrgäste an Haltestellen ankommen und vergeblich auf Busse warten. Jede Minute Verzögerung bei der Information erzeugt direkte Unzufriedenheit und erhöht das Beschwerdeaufkommen.
 - **Priorität:** must
+- **Status:** draft
 
 ---
 
@@ -180,7 +199,9 @@ Die RVB soll Echtzeitdaten an die nationale Open-Data-Plattform in den gefordert
 - **Baseline:** Kein Echtzeit-Feed vorhanden, nur nächtlicher NeTEx-Fahrplanexport
 - **Zielwert:** ≥ 99,5 % Feed-Verfügbarkeit, Konformitätstest bestanden
 - **Quelle:** STK-06 (BAV), STK-09 (Kantonales Amt)
+- **Begründung:** Das BAV hat ein Audit-Finding ausgesprochen. Die Konzessionserneuerung ist an die Erfüllung geknüpft — ein existenzielles Risiko für die RVB.
 - **Priorität:** must
+- **Status:** draft
 
 ---
 
@@ -192,7 +213,9 @@ Die RVB soll den Aufwand reduzieren, den Disponenten für die Kommunikation eine
 - **Baseline:** 6 Min. 20 Sek. durchschnittliche Erfassungszeit pro Störung (drei Kanäle, manuell)
 - **Zielwert:** ≤ 2 Min. Erfassungszeit pro Störung
 - **Quelle:** STK-03 (Disponenten), STK-01 (Leiter Betrieb)
+- **Begründung:** Disponenten stehen unter Zeitdruck. Wenn die Kommunikation zu aufwändig ist, hat die operative Disposition Vorrang und die Meldung wird verspätet oder gar nicht publiziert — was BR-02 direkt untergräbt.
 - **Priorität:** must
+- **Status:** draft
 
 ---
 
@@ -204,7 +227,9 @@ Die RVB soll den Anteil der Haltestellen mit Echtzeitinformation erhöhen, wobei
 - **Baseline:** 61 von 412 Haltestellen mit Echtzeit-Anzeige (14,8 % Abdeckung)
 - **Zielwert:** ≥ 45 % bei Volleinführung; 100 % technisch erreichbar ohne Codeänderung
 - **Quelle:** STK-09 (Kantonales Amt), STK-05 (Fahrgäste)
+- **Begründung:** Der Kanton als Hauptaktionär (71 %) erwartet eine deutlich höhere Abdeckung als Gegenleistung für die öffentliche Mitfinanzierung. Die kanalunabhängige Architektur vermeidet wiederholte Softwarekosten bei jedem Ausbauschritt.
 - **Priorität:** should
+- **Status:** draft
 
 ---
 
@@ -216,7 +241,9 @@ Die RVB soll Fahrgastinformationen für Menschen mit visuellen, auditiven oder k
 - **Baseline:** Website teilweise konform, App und Anzeigen nicht geprüft
 - **Zielwert:** Vollständige Konformität zum anwendbaren Barrierefreiheitsstandard; ≥ 90 % Task-Erfolgsrate mit Screenreader
 - **Quelle:** STK-08 (Behindertenorganisation), STK-06 (BAV)
+- **Begründung:** Barrierefreiheit ist eine gesetzliche Pflicht nach BehiG. Barrierefreiheit ist kein optionales Feature, sondern eine Grundvoraussetzung für den Betrieb öffentlicher Informationssysteme.
 - **Priorität:** must
+- **Status:** draft
 
 ---
 
@@ -228,7 +255,9 @@ Die RVB soll jede fahrgastseitige Meldung in Deutsch, Französisch, Italienisch 
 - **Baseline:** 12 % der Störungsmeldungen in allen Sprachen verfügbar (manuell, Deutsch zuerst, Französisch nur wenn zufällig französischsprachiger Disponent im Dienst)
 - **Zielwert:** ≥ 98 % der freigegebenen Störungsmeldungen in allen vier Sprachen innerhalb von 60 Sek. nach Freigabe
 - **Quelle:** STK-04 (Kundendienst), STK-05 (Fahrgäste)
+- **Begründung:** Die RVB bedient ein mehrsprachiges Einzugsgebiet. Aktuell sind nur 12 % der Meldungen in allen Sprachen verfügbar, was einen grossen Teil der Fahrgäste von zeitkritischen Informationen ausschliesst.
 - **Priorität:** must
+- **Status:** draft
 
 ---
 
@@ -240,7 +269,9 @@ Die RVB soll Beschwerden reduzieren, die auf fehlende oder fehlerhafte Fahrgasti
 - **Baseline:** 1'340 informationsbezogene Beschwerden pro Jahr (38 % aller Beschwerden)
 - **Zielwert:** ≤ 670 Beschwerden pro Jahr
 - **Quelle:** STK-04 (Kundendienst), STK-01 (Leiter Betrieb)
+- **Begründung:** 1'340 informationsbezogene Beschwerden pro Jahr verursachen direkten Aufwand im Kundendienst (Bearbeitungszeit, Rückrufe) und beeinträchtigen den Ruf des Unternehmens bei der Konzessionsbehörde.
 - **Priorität:** should
+- **Status:** draft
 
 ---
 
@@ -252,7 +283,77 @@ Die RVB soll Fahrzeug- und Fahrtdaten ausschliesslich für die Fahrgastinformati
 - **Baseline:** Keine Betriebsvereinbarung vorhanden, Personalvertretung hat Bedenken geäussert
 - **Zielwert:** DSFA ohne Auflagen genehmigt; null Fahrer-Identifikatoren im Reporting-Datamart
 - **Quelle:** STK-07 (Personalvertretung), STK-10 (DSB)
+- **Begründung:** Die Personalvertretung hat klare Bedenken geäussert und kann das Projekt blockieren (Einfluss: hoch). Ohne unterzeichnete Betriebsvereinbarung ist kein Go-Live möglich. Zudem verlangt das nDSG die Zweckbindung personenbezogener Daten.
 - **Priorität:** must
+- **Status:** draft
+
+---
+
+### Functional Hints (zur späteren Verfeinerung)
+
+**FH-01: Direkterfassung durch Disponenten**
+- Übergeordnetes BR: BR-04
+- Quellzitat: «Ich rufe an, die tippen das ab, und vielleicht steht es 20 Minuten später auf der Website.»
+- Notizen: Impliziert, dass der Disponent Störungsmeldungen direkt im System erfassen soll, ohne den Umweg über Telefon und manuelle Nachbearbeitung. Eliminiert den grössten Verzögerungsfaktor.
+
+**FH-02: Vorlagenbasierte Meldungserfassung**
+- Übergeordnetes BR: BR-04, BR-07
+- Quellzitat: «Gebt mir Lückentexte.»
+- Notizen: Disponenten wollen keine Freitextformulierung. Pro Störungsursache eine vorgefertigte Vorlage mit begrenztem Freitext-Feld. Vorlagen sind vorübersetzt, nur der Freitext-Anteil muss automatisch übersetzt werden.
+
+**FH-03: Automatische Mehrsprachigkeitsgenerierung**
+- Übergeordnetes BR: BR-07
+- Quellzitat: «Französisch nur wenn zufällig französischsprachiger Disponent im Dienst.»
+- Notizen: Übersetzung darf nicht von der Verfügbarkeit sprachkundiger Disponenten abhängen. Impliziert einen automatisierten Übersetzungsmechanismus auf Basis strukturierter Meldungen.
+
+**FH-04: Schweregrad-basierte Kanalsteuerung**
+- Übergeordnetes BR: BR-01, BR-03
+- Quellzitat: «Nicht jede kleine Verspätung muss auf der Haltestellenanzeige erscheinen.»
+- Notizen: Impliziert eine Kanalmatrix, die basierend auf Schweregrad und betroffenem Gebiet die Zielkanäle automatisch bestimmt.
+
+**FH-05: Freigabe-Workflow für kritische Meldungen**
+- Übergeordnetes BR: BR-01
+- Quellzitat: «Bei schweren Störungen muss ich als Pikettoffizier das Okay geben, bevor etwas rausgeht.»
+- Notizen: Impliziert einen Freigabe-Workflow, der nur bei schweren Störungen greift. Bei leichten Störungen direkte Veröffentlichung, um die Zeitvorgabe aus BR-02 nicht zu gefährden.
+
+**FH-06: Service-Desk-Ansicht**
+- Übergeordnetes BR: BR-01, BR-08
+- Quellzitat: «Fahrgäste rufen an und wir haben keine Ahnung, was sie in der App im Vergleich zur Anzeige gesehen haben.»
+- Notizen: Impliziert eine konsolidierte Ansicht für den Kundendienst, die pro Störung den aktuellen Meldungstext auf jedem Kanal zeigt.
+
+---
+
+### Identifizierte Randbedingungen
+
+**CON-01: ITCS bleibt bestehen**
+- Typ: technisch
+- Beschreibung: Das bestehende ITCS wird beibehalten und nicht abgelöst. PRISMA bezieht Echtzeitdaten über die VDV-453-Schnittstelle des ITCS.
+- Quelle: STK-01 (Leiter Betrieb), Projektbriefing
+- Auswirkung: Die Systemarchitektur muss eine Integrationsschicht zum ITCS vorsehen, nicht eine Ablösung. Beeinflusst BR-02 und BR-05.
+
+**CON-02: Budget CHF 4,2 Mio.**
+- Typ: finanziell
+- Beschreibung: Die Gesamtkosten für das PRISMA-Projekt dürfen CHF 4,2 Mio. nicht überschreiten.
+- Quelle: STK-01 (Leiter Betrieb), Projektbriefing
+- Auswirkung: Begrenzt den Umfang der Hardware-Ausstattung (Haltestellenanzeigen) und damit das Abdeckungsziel in BR-05. Priorisierter Rollout nach Fahrgastaufkommen erforderlich.
+
+**CON-03: Go-Live bis Q4 2026**
+- Typ: organisatorisch
+- Beschreibung: Die Volleinführung muss vor der nächsten Konzessionserneuerung erfolgen.
+- Quelle: STK-06 (BAV), STK-01 (Leiter Betrieb)
+- Auswirkung: Beeinflusst den Scope — Funktionen, die nicht bis Q4 2026 realisierbar sind, müssen in eine zweite Phase verschoben werden.
+
+**CON-04: Schweizer Datenschutzgesetz (nDSG)**
+- Typ: rechtlich
+- Beschreibung: Die Verarbeitung von Fahrzeugpositionsdaten unterliegt dem revidierten Schweizer Datenschutzgesetz. Zweckbindung und Datensparsamkeit sind einzuhalten.
+- Quelle: STK-10 (DSB), regulatorischer Kontext
+- Auswirkung: Erfordert eine Datenschutz-Folgenabschätzung (DSFA) vor Go-Live. Beeinflusst BR-09 und die technische Architektur der Datenaufbewahrung.
+
+**CON-05: SIRI-Format für nationale Plattform**
+- Typ: technisch / rechtlich
+- Beschreibung: Die nationale Plattform akzeptiert ausschliesslich SIRI-SX- und SIRI-SM-Feeds. Das Format ist nicht verhandelbar.
+- Quelle: STK-06 (BAV), Konzessionsauflage
+- Auswirkung: Bestimmt die Schnittstellenspezifikation für BR-03. Eigenentwicklung eines abweichenden Formats ist keine Option.
 
 ---
 
@@ -264,6 +365,7 @@ Die RVB soll Fahrzeug- und Fahrtdaten ausschliesslich für die Fahrgastinformati
 | 2 | Genauer Barrierefreiheitsstandard nicht spezifiziert | Gilt WCAG 2.1 AA oder ein neuerer Standard? Gibt es kantonale Vorgaben? |
 | 3 | Verhalten bei ITCS-Ausfall nicht beschrieben | Was sollen die Anzeigen zeigen, wenn keine Echtzeitdaten verfügbar sind? Statischen Fahrplan oder Ausfallmeldung? |
 | 4 | SLA für die nationale Plattform nicht bekannt | Welche Verfügbarkeits- und Latenzanforderungen stellt die Plattform an die SIRI-Feeds? |
+| 5 | Auditierbare Kommunikationshistorie nicht adressiert | Wird eine lückenlose Nachvollziehbarkeit aller Störungsmeldungen für regulatorische Zwecke benötigt? Gibt es ein BR dafür? |
 
 ---
 
@@ -273,10 +375,16 @@ Die RVB soll Fahrzeug- und Fahrtdaten ausschliesslich für die Fahrgastinformati
 
 ---
 
-### Functional Requirements (MASTeR-Satzmuster)
+### Functional Requirements (Satzschablone)
 
-Das MASTeR-Satzmuster: `<Bedingung> soll das System <Verb> <Objekt> <Detail>.`
-«soll» = verbindlich. «sollte» = wünschenswert, kann abgewogen werden.
+Die Satzschablone: `<Bedingung>` **soll/muss/sollte/kann** `das System <Prozesswort> <Objekt> <Ergänzung>.`
+
+| Schlüsselwort | Verbindlichkeit |
+|---|---|
+| **muss** | Rechtlich verpflichtend |
+| **soll** | Verbindlich (Standardfall) |
+| **sollte** | Wünschenswert, kann abgewogen werden |
+| **kann** | Optional |
 
 ---
 
@@ -285,6 +393,7 @@ Das MASTeR-Satzmuster: `<Bedingung> soll das System <Verb> <Objekt> <Detail>.`
 **FR-001 — Fahrplanimport**
 Das System soll geplante Fahrplandaten via Schnittstelle IF-02 im NeTEx-Format mindestens einmal täglich importieren.
 
+- **Begründung:** Ohne aktuellen Fahrplan kann das System keine Soll/Ist-Abweichungen berechnen und keine Abfahrtszeiten anzeigen.
 - **Übergeordnetes BR:** BR-02
 - **Priorität:** must
 - **Akzeptanzkriterien:**
@@ -292,10 +401,13 @@ Das System soll geplante Fahrplandaten via Schnittstelle IF-02 im NeTEx-Format m
   - Wenn: Der Import läuft
   - Dann: Alle Fahrten der nächsten 14 Tage sind vor 02:30 in PRISMA verfügbar und das Importergebnis wird protokolliert
   - Und: Falls die Datei die Schemavalidierung nicht besteht, wird der zuvor gültige Datensatz beibehalten und IT-Betrieb innerhalb von 5 Minuten alarmiert
+- **Verifikationsmethode:** Test
+- **Status:** draft
 
 **FR-002 — ITCS-Echtzeitdaten-Subskription**
 Das System soll Fahrzeugpositions- und Fahrtfortschrittsdaten vom ITCS via Schnittstelle IF-01 abonnieren und Aktualisierungen mindestens alle 10 Sekunden verarbeiten.
 
+- **Begründung:** Echtzeitdaten vom ITCS sind die Grundlage für die geschätzten Abfahrtszeiten an den Haltestellen. Ohne regelmässige Updates veralten die Schätzungen und werden unbrauchbar.
 - **Übergeordnetes BR:** BR-02, BR-05
 - **Priorität:** must
 - **Akzeptanzkriterien:**
@@ -303,6 +415,8 @@ Das System soll Fahrzeugpositions- und Fahrtfortschrittsdaten vom ITCS via Schni
   - Wenn: Ein Positions-Update eintrifft
   - Dann: Die geschätzte Abfahrtszeit der betroffenen Haltestellen wird innerhalb von 5 Sekunden neu berechnet
   - Und: Wenn für eine laufende Fahrt seit mehr als 90 Sekunden kein Update eingegangen ist, wird die Schätzung als «veraltet» markiert
+- **Verifikationsmethode:** Test
+- **Status:** draft
 
 ---
 
@@ -311,6 +425,7 @@ Das System soll Fahrzeugpositions- und Fahrtfortschrittsdaten vom ITCS via Schni
 **FR-003 — Störung erstellen mit Pflichtattributen**
 Wenn ein authentifizierter Disponent eine neue Störung erfasst, soll das System die Pflichtattribute Ursache, Schweregrad, betroffenes Gebiet, Gültigkeitsbeginn und Quelltext verlangen.
 
+- **Begründung:** Ohne vollständige Pflichtattribute können nachgelagerte Prozesse — Kanalauswahl, Übersetzung, SIRI-Feed — nicht korrekt arbeiten. Die standardisierte Taxonomie stellt sicher, dass Ursachen über alle Kanäle hinweg einheitlich codiert sind.
 - **Übergeordnetes BR:** BR-01, BR-04
 - **Priorität:** must
 - **Akzeptanzkriterien:**
@@ -318,10 +433,13 @@ Wenn ein authentifizierter Disponent eine neue Störung erfasst, soll das System
   - Wenn: Er eine Störung erstellt
   - Dann: Kann die Störung nur gespeichert werden, wenn alle Pflichtattribute ausgefüllt sind
   - Und: Die Ursache ist auf die standardisierte Taxonomie gemäss Glossar beschränkt (kein Freitext-Ursachenfeld)
+- **Verifikationsmethode:** Test
+- **Status:** draft
 
 **FR-004 — Meldungsvorlagen mit Freitext-Feld**
 Wenn eine Störungsursache ausgewählt wird, soll das System eine vorgefertigte Meldungsvorlage anbieten, die ein begrenztes Freitext-Feld von maximal 240 Zeichen enthält.
 
+- **Begründung:** Vorlagen beschleunigen die Erfassung (BR-04) und ermöglichen die Vorübersetzung der strukturierten Anteile (BR-07). Das begrenzte Freitext-Feld gibt Disponenten Flexibilität, ohne die Übersetzbarkeit zu gefährden.
 - **Übergeordnetes BR:** BR-04, BR-07
 - **Priorität:** must
 - **Akzeptanzkriterien:**
@@ -329,10 +447,13 @@ Wenn eine Störungsursache ausgewählt wird, soll das System eine vorgefertigte 
   - Wenn: Der Disponent das Textfeld öffnet
   - Dann: Ist die Vorlage vorausgefüllt, das Freitext-Feld erzwingt die Zeichenbegrenzung mit Live-Zähler
   - Und: Die Vorlage enthält vorübersetzte Textbausteine für alle vier Sprachen
+- **Verifikationsmethode:** Test
+- **Status:** draft
 
 **FR-005 — Kanalauswahl gemäss Kanalmatrix**
 Bei der Erstellung einer Störung soll das System die Zielkanäle aus Schweregrad und betroffenem Gebiet gemäss Kanalmatrix bestimmen und dem Disponenten die Abwahl von Kanälen — mit Ausnahme der nationalen Plattform — nur mit Angabe eines Grundes ermöglichen.
 
+- **Begründung:** Die automatische Kanalauswahl stellt sicher, dass jede Störung gemäss ihrer Schwere auf den richtigen Kanälen erscheint (BR-01). Die nationale Plattform ist nicht abwählbar, weil die Konzessionsauflage eine lückenlose Belieferung verlangt (BR-03).
 - **Übergeordnetes BR:** BR-01, BR-03
 - **Priorität:** must
 - **Akzeptanzkriterien:**
@@ -341,6 +462,8 @@ Bei der Erstellung einer Störung soll das System die Zielkanäle aus Schweregra
   - Dann: Sind Haltestellenanzeige, App-Push, App-Liste, Website, nationale Plattform und Kundendienst-Ansicht vorausgewählt
   - Und: Die nationale Plattform kann nicht abgewählt werden
   - Und: Wird ein anderer Kanal abgewählt, muss der Disponent einen Grund erfassen
+- **Verifikationsmethode:** Test
+- **Status:** draft
 
 ---
 
@@ -349,6 +472,7 @@ Bei der Erstellung einer Störung soll das System die Zielkanäle aus Schweregra
 **FR-006 — Freigabe-Workflow nach Schweregrad**
 Wenn eine Störung den Schweregrad «major» oder «severe» hat, soll das System vor der Veröffentlichung die Freigabe durch einen diensthabenden Pikettoffizier verlangen. Bei Schweregrad «information» oder «minor» soll keine Freigabe erforderlich sein.
 
+- **Begründung:** Schwere Störungen haben hohe öffentliche Sichtbarkeit und rechtliche Implikationen. Die Freigabe durch den Pikettoffizier schützt vor fehlerhaften Meldungen. Leichte Störungen werden ohne Freigabe veröffentlicht, um die 3-Minuten-Vorgabe aus BR-02 zu ermöglichen.
 - **Übergeordnetes BR:** BR-01
 - **Priorität:** must
 - **Akzeptanzkriterien:**
@@ -356,10 +480,13 @@ Wenn eine Störung den Schweregrad «major» oder «severe» hat, soll das Syste
   - Wenn: Der Disponent die Veröffentlichung auslöst
   - Dann: Wird die Störung in den Status «wartet auf Freigabe» versetzt und der Pikettoffizier wird benachrichtigt
   - Und: Erst nach Freigabe erfolgt die Verteilung an die Kanäle
+- **Verifikationsmethode:** Test
+- **Status:** draft
 
 **FR-007 — Mehrsprachige Meldungsgenerierung**
 Bei der Freigabe soll das System aus dem strukturierten Inhalt lokalisierte Meldungen in Deutsch, Französisch, Italienisch und Englisch innerhalb von 60 Sekunden generieren.
 
+- **Begründung:** Das Zeitziel von 60 Sekunden stellt sicher, dass die Übersetzung die Gesamtverzögerung von 3 Minuten (BR-02) nicht überproportional beansprucht. Die Generierung aus strukturierten Inhalten (statt Freitext-Übersetzung) erhöht die Qualität.
 - **Übergeordnetes BR:** BR-07
 - **Priorität:** must
 - **Akzeptanzkriterien:**
@@ -367,6 +494,8 @@ Bei der Freigabe soll das System aus dem strukturierten Inhalt lokalisierte Meld
   - Wenn: 60 Sekunden vergangen sind
   - Dann: Existieren Meldungen in allen vier Sprachen
   - Und: Falls die automatische Übersetzung fehlschlägt, wird ein Fallback-Verfahren angewendet und die betroffene Sprache markiert
+- **Verifikationsmethode:** Test
+- **Status:** draft
 
 ---
 
@@ -375,6 +504,7 @@ Bei der Freigabe soll das System aus dem strukturierten Inhalt lokalisierte Meld
 **FR-008 — Verteilung an alle Kanäle**
 Nach der Freigabe oder Genehmigung soll das System die Störungsmeldung innerhalb von 10 Sekunden an alle ausgewählten Kanäle verteilen.
 
+- **Begründung:** Die 10-Sekunden-Vorgabe stellt sicher, dass die Verteilung selbst keinen nennenswerten Anteil an der 3-Minuten-Gesamtzeit (BR-02) ausmacht. Die Protokollierung ermöglicht die Nachvollziehbarkeit für Audits.
 - **Übergeordnetes BR:** BR-02
 - **Priorität:** must
 - **Akzeptanzkriterien:**
@@ -382,10 +512,13 @@ Nach der Freigabe oder Genehmigung soll das System die Störungsmeldung innerhal
   - Wenn: Die Freigabe erteilt wird
   - Dann: Ist die Meldung innerhalb von 10 Sekunden auf allen drei Kanälen verfügbar
   - Und: Jeder Verteilversuch wird mit Zeitstempel, Kanal und Ergebnis protokolliert
+- **Verifikationsmethode:** Test
+- **Status:** draft
 
 **FR-009 — Abfahrtszeilen für Haltestellenanzeigen**
 Das System soll Abfahrtszeilen pro Haltestelle an den Display-Adapter liefern, sortiert nach geschätzter Abfahrtszeit, mit Countdown in ganzen Minuten bis 59 Minuten und als Uhrzeit darüber hinaus.
 
+- **Begründung:** Die einheitliche Countdown-Logik verhindert widersprüchliche Anzeigen zwischen verschiedenen Haltestellen und schafft ein konsistentes Fahrgasterlebnis. Die Uhrzeit-Darstellung ab 60 Minuten entspricht der Branchenpraxis im Schweizer öV.
 - **Übergeordnetes BR:** BR-05
 - **Priorität:** must
 - **Akzeptanzkriterien:**
@@ -393,10 +526,13 @@ Das System soll Abfahrtszeilen pro Haltestelle an den Display-Adapter liefern, s
   - Wenn: Die Anzeige die Daten abruft
   - Dann: Werden die Abfahrten in aufsteigender Reihenfolge angezeigt
   - Und: Ein Estimate von 45 Minuten wird als «45» angezeigt, ein Estimate von 61 Minuten als Uhrzeit (z. B. «14:32»)
+- **Verifikationsmethode:** Test
+- **Status:** draft
 
 **FR-010 — SIRI-SX-Feed für die nationale Plattform**
 Das System soll einen SIRI-SX-Situation-Exchange-Feed für abonnierte Konsumenten bereitstellen und bei jeder Statusänderung einer Störung innerhalb von 10 Sekunden ein Update senden.
 
+- **Begründung:** Der SIRI-SX-Feed ist die zentrale Schnittstelle zur Erfüllung der Konzessionsauflage (BR-03). Die 10-Sekunden-Vorgabe stellt sicher, dass die nationale Plattform zeitnah aktuelle Störungsinformationen erhält.
 - **Übergeordnetes BR:** BR-03
 - **Priorität:** must
 - **Akzeptanzkriterien:**
@@ -405,6 +541,8 @@ Das System soll einen SIRI-SX-Situation-Exchange-Feed für abonnierte Konsumente
   - Dann: Wird innerhalb von 10 Sekunden eine SIRI-SX-Nachricht an alle Abonnenten gesendet
   - Und: Die Nachricht enthält codierte Ursachen gemäss der standardisierten Taxonomie
   - Und: Heartbeat-Anfragen werden innerhalb von 5 Sekunden beantwortet
+- **Verifikationsmethode:** Test
+- **Status:** draft
 
 ---
 

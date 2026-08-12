@@ -83,7 +83,7 @@ für den nächsten verwendet.
 |---|-------|---------|---------|--------------------|
 | 1 | Stakeholder Analyst | Projektbriefing, Interviews | Stakeholder-Register, Interessen-/Einfluss-Karte, Konflikte | — |
 | 2 | Requirements Elicitor | Briefing, Interviews, Stakeholder-Register | Entwurf Business Requirements (BR-nn) | ISO 29148 |
-| 3 | Requirements Refiner | Entwurfsanforderungen | SMART, testbare Anforderungen mit Abnahmekriterien | MASTeR-Muster |
+| 3 | Requirements Refiner | Entwurfsanforderungen | SMART, testbare Anforderungen mit Abnahmekriterien | Satzschablone |
 | 4 | Quality Attribute Analyst | Functional Requirements, Randbedingungen | NFRs nach ISO 25010-Kategorien | ISO 25010, ISO 29148 |
 | 5 | Use Case Author | Anforderungen, Personas | Use Cases im Cockburn-Stil mit allen Abläufen | Cockburn-Methodik |
 | 6 | Requirements Reviewer | Beliebiges RE-Artefakt | Mängelliste mit Schweregrad, Fundstelle, Verbesserungsvorschlag | IEEE 29148 Qualitätskriterien |

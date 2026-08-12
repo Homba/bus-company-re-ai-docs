@@ -41,12 +41,12 @@ For each defect you find, reason through: "What would a developer do if they rea
 literally? What would a different developer do?" If two reasonable developers would
 implement it differently, the requirement is ambiguous.
 
-## Requirement sentence pattern (MASTeR-style)
+## Requirement sentence pattern (Satzschablone)
 
-Use this pattern for functional requirements:
+Use the IREB Satzschablone pattern for functional requirements:
 
 ```
-<condition> the <system/component> shall <process verb> <object> <detail/constraint>.
+<condition> the <system/component> shall/should/may <process verb> <object> <detail/constraint>.
 ```
 
 Examples:
@@ -64,7 +64,7 @@ For each requirement, produce:
 
 ```
 **[ID]: [Title]**
-- Requirement: [Full requirement sentence using MASTeR pattern]
+- Requirement: [Full requirement sentence using Satzschablone pattern]
 - Rationale: [Why this requirement exists — link to business goal]
 - Parent: [BR-nn or FR-nnn this derives from]
 - Priority: must | should | may
