@@ -32,7 +32,7 @@
 
 | BILD | NARRATION |
 |------|-----------|
-| Karte einer fiktiven Schweizer Region mit eingezeichneten Buslinien. Logo: «RVB — Regionalverkehr Bernland AG» | Jetzt zur Fallstudie. RVB ist ein regionales Busunternehmen in der Schweiz. Der Kanton hält 71%, die Gemeinden den Rest. 38 Buslinien, 412 Haltestellen, rund 480 Mitarbeitende. Fiktiv — aber an echten Schweizer ÖV-Unternehmen angelehnt. |
+| Karte einer fiktiven Schweizer Region mit eingezeichneten Buslinien. Logo: «RVB — Regionalverkehr Bernland AG» | Jetzt zur Fallstudie. RVB ist ein regionales Busunternehmen in der Schweiz. Der Kanton Bern hält 71%, die Gemeinden den Rest. 38 Buslinien, 412 Haltestellen, rund 480 Mitarbeitende. Fiktiv — aber an echten Schweizer ÖV-Unternehmen angelehnt. |
 | Splitscreen: Disponent an einer Arbeitsstation, drei Browserfenster offen (CMS, SMS-Panel, App-Admin). Eine Uhr tickt. | Ihr Problem ist die Fahrgastinformation. Wenn ein Bus ausfällt oder eine Strasse gesperrt wird, müssen die Disponenten dieselbe Meldung in drei separate Systeme tippen — Website, SMS-Gateway und App-Backend. Dreimal, drei verschiedene Formulierungen. In der Stosszeit schaffen sie oft nur eines davon. |
 | Animation: Fahrgast an einer Haltestelle, Regen, schaut aufs Handy. App zeigt «pünktlich». Bus kommt nicht. | Die Fahrgäste sehen dann auf der App etwas anderes als auf der Website — und an der Haltestelle gar nichts. Sie stehen im Regen und wissen nicht, was passiert ist. |
 | Infografik mit vier Kennzahlen, die nacheinander eingeblendet werden: | Die Zahlen sind deutlich. |
