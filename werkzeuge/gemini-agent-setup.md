@@ -1,50 +1,50 @@
-# Gemini Code Assist — Agent einrichten: bus-corp-Erklaerer
+# Google Antigravity — Agent einrichten: bus-corp-Erklaerer
 
-> **Hinweis (Stand August 2026):** Gemini Code Assist für Einzelpersonen wurde am 18. Juni 2026 eingestellt und durch [Google Antigravity](https://ai.google.dev/gemini-api/docs/antigravity-agent) ersetzt. Enterprise-Lizenzen (Standard/Enterprise) funktionieren weiterhin. Falls Workshop-Teilnehmende keine Enterprise-Lizenz haben, siehe Abschnitt «Alternative: Google Antigravity» unten.
+> Seit Juni 2026 ersetzt [Google Antigravity](https://ai.google.dev/gemini-api/docs/antigravity-agent) die bisherige Gemini Code Assist Extension für Einzelpersonen. Der Workshop setzt persönliche Lizenzen voraus — daher ist Antigravity der Standard-Weg.
 
 ## Unterschiede zu GitHub Copilot und Claude Code
 
-| | GitHub Copilot | Claude Code | Gemini Code Assist |
+| | GitHub Copilot | Claude Code | Google Antigravity |
 |---|---|---|---|
-| **Agent-Datei** | `.github/agents/*.agent.md` | `.claude/agents/*.md` | `GEMINI.md` im Projekt-Root |
-| **Setup** | Datei im Repo anlegen oder `/create-agent` | Datei im Repo anlegen | `GEMINI.md` im Repo anlegen |
-| **Workspace-Zugriff** | Automatisch via `read`/`search` Tools | Via `Read`-Tool mit Pfaden | Automatisch — greift auf Workspace-Dateien zu (grep, file read) |
+| **Agent-Datei** | `.github/agents/*.agent.md` | `.claude/agents/*.md` | `AGENTS.md` im Projekt-Root |
+| **Setup** | Datei im Repo anlegen oder `/create-agent` | Datei im Repo anlegen | `AGENTS.md` im Repo anlegen |
+| **Workspace-Zugriff** | Automatisch via `read`/`search` Tools | Via `Read`-Tool mit Pfaden | Automatisch — greift auf Workspace-Dateien zu |
 | **Zwei Repos** | Workspace erkennt beide automatisch | Explizite Pfade im Prompt | Workspace erkennt beide automatisch |
 | **Tool-Einschränkung** | Im Frontmatter (`tools: [read, search]`) | Im Prompt-Text beschrieben | Im Prompt-Text beschrieben |
 | **Aufruf** | `@copilot-bus-corp-erklaerer` im Chat | `/agent bus-corp-frage` im Terminal | Instruktionen gelten automatisch für alle Interaktionen |
 
 ### Wichtige Unterschiede zu Copilot
 
-1. **Keine benannten Agents**: Gemini Code Assist hat kein Konzept von individuell aufrufbaren Agents wie Copilots `@agent-name`. Stattdessen gilt `GEMINI.md` als **globale Instruktion** für alle Interaktionen im Projekt.
+1. **Keine benannten Agents**: Antigravity hat kein Konzept von individuell aufrufbaren Agents wie Copilots `@agent-name`. Stattdessen gilt `AGENTS.md` als **globale Instruktion** für alle Interaktionen im Projekt.
 2. **Kein Frontmatter**: Es gibt kein `tools:`, `name:` oder `description:`-Feld. Einschränkungen werden im Prompt-Text formuliert.
-3. **Workspace-Zugriff vorhanden**: Anders als bei Google AI Studio hat Gemini Code Assist in VS Code **vollen Zugriff** auf alle Dateien im Workspace — ähnlich wie Copilot.
+3. **Workspace-Zugriff vorhanden**: Antigravity hat **vollen Zugriff** auf alle Dateien im Workspace — ähnlich wie Copilot.
 
-## Einrichtung in VS Code
+## Einrichtung
 
 ### Voraussetzungen
 
-- VS Code mit der Gemini Code Assist Extension installiert
-- Aktive Enterprise-Lizenz (Standard oder Enterprise)
+- Google Antigravity installiert (Desktop-App oder Antigravity CLI)
+- Persönliches Google-Konto
 - Den Multi-Root-Workspace (`ki-ba-workshop.code-workspace`) geöffnet
 
 ### Schritt 1: Datei anlegen
 
-Erstelle die Datei `GEMINI.md` im Root des Docs-Repos:
+Erstelle die Datei `AGENTS.md` im Root des Docs-Repos:
 
 ```bash
 # Vom Workspace-Ordner aus:
-touch bus-company-re-ai-docs/GEMINI.md
+touch bus-company-re-ai-docs/AGENTS.md
 ```
 
 ### Schritt 2: Inhalt einfügen
 
-Kopiere den System Prompt (siehe unten) in die Datei `GEMINI.md`.
+Kopiere den System Prompt (siehe unten) in die Datei `AGENTS.md`.
 
 ### Schritt 3: Fertig
 
-Gemini Code Assist liest die Datei automatisch beim nächsten Chat. Kein Neustart nötig.
+Antigravity liest die Datei automatisch als System-Instruktion beim nächsten Chat.
 
-## System Prompt (Inhalt für `GEMINI.md`)
+## System Prompt (Inhalt für `AGENTS.md`)
 
 ```markdown
 Du bist ein freundlicher Erklärungs-Assistent für Business Analysten und Requirements Engineers. Dein Hauptzweck ist der Einstieg ins bestehende Projekt: Du hilfst Menschen, die neu im Projekt sind oder einen bestimmten Bereich noch nicht kennen, sich zurechtzufinden. Fokus ist Verstehen und Erklären – nicht Verändern und nicht sofortige Tiefe.
@@ -100,12 +100,10 @@ Alle Pfadangaben sind relativ zu diesen beiden Root-Ordnern zu lesen. Findest du
    - „Fehlt dieser Begriff im Glossar — soll ich einen Eintrag vorschlagen?"
 ```
 
-## Alternative: Google Antigravity
+## Alternative: Gemini Code Assist (Enterprise)
 
-Falls Teilnehmende keine Enterprise-Lizenz haben, nutzen sie seit Juni 2026 **Google Antigravity** statt Gemini Code Assist. Die Einrichtung ist ähnlich, verwendet aber `AGENTS.md` statt `GEMINI.md`:
+Teilnehmende mit einer Enterprise-Lizenz (Standard oder Enterprise) können weiterhin **Gemini Code Assist** in VS Code nutzen. Die Einrichtung ist ähnlich, verwendet aber `GEMINI.md` statt `AGENTS.md`:
 
-1. Erstelle `AGENTS.md` im Projekt-Root (gleicher Inhalt wie oben)
-2. Antigravity liest diese Datei automatisch als System-Instruktion
-3. Der Workspace-Zugriff funktioniert analog
-
-Weitere Infos: [Antigravity Agent Dokumentation](https://ai.google.dev/gemini-api/docs/antigravity-agent)
+1. Installiere die Gemini Code Assist Extension in VS Code
+2. Erstelle `GEMINI.md` im Projekt-Root (gleicher Inhalt wie oben)
+3. Gemini Code Assist liest die Datei automatisch
