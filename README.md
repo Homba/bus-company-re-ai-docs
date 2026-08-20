@@ -11,7 +11,6 @@ Anforderungsdokumentation für das Fahrgastinformationssystem **PRISMA** der Reg
 | `anforderungsspezifikation/` | Vollständige Anforderungsspezifikation (12 Kapitel) |
 | `anwendungsfaelle/` | Use Cases im Cockburn-Stil |
 | `adr/` | Architecture Decision Records |
-| `backlog/` | Epics und Sprint-Planung |
 | `ausgangsmaterial/` | Rohmaterialien (Projektbriefing, Interview-Transkripte) |
 | `werkzeuge/` | Agent-System-Prompts und CI-Validierungsskript |
 | `additional_exercises/` | Ursprüngliche Workshop-Übungen, Fallstudie und weitere Materialien |
