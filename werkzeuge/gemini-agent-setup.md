@@ -1,85 +1,86 @@
-# Gemini-Agent einrichten: bus-corp-Erklaerer
+# Gemini Code Assist — Agent einrichten: bus-corp-Erklaerer
+
+> **Hinweis (Stand August 2026):** Gemini Code Assist für Einzelpersonen wurde am 18. Juni 2026 eingestellt und durch [Google Antigravity](https://ai.google.dev/gemini-api/docs/antigravity-agent) ersetzt. Enterprise-Lizenzen (Standard/Enterprise) funktionieren weiterhin. Falls Workshop-Teilnehmende keine Enterprise-Lizenz haben, siehe Abschnitt «Alternative: Google Antigravity» unten.
 
 ## Unterschiede zu GitHub Copilot und Claude Code
 
-| | GitHub Copilot | Claude Code | Gemini |
+| | GitHub Copilot | Claude Code | Gemini Code Assist |
 |---|---|---|---|
-| **Agent-Datei** | `.github/agents/*.agent.md` | `.claude/agents/*.md` | Keine Datei im Repo |
-| **Setup** | Datei im Repo anlegen oder `/create-agent` | Datei im Repo anlegen | System Prompt in AI Studio einfügen |
-| **Workspace-Zugriff** | Automatisch via `read`/`search` Tools | Via `Read`-Tool mit Pfaden | Kein direkter Zugriff — Dateien müssen hochgeladen werden |
-| **Zwei Repos** | Workspace erkennt beide automatisch | Explizite Pfade im Prompt | Relevante Dateien manuell hochladen |
+| **Agent-Datei** | `.github/agents/*.agent.md` | `.claude/agents/*.md` | `GEMINI.md` im Projekt-Root |
+| **Setup** | Datei im Repo anlegen oder `/create-agent` | Datei im Repo anlegen | `GEMINI.md` im Repo anlegen |
+| **Workspace-Zugriff** | Automatisch via `read`/`search` Tools | Via `Read`-Tool mit Pfaden | Automatisch — greift auf Workspace-Dateien zu (grep, file read) |
+| **Zwei Repos** | Workspace erkennt beide automatisch | Explizite Pfade im Prompt | Workspace erkennt beide automatisch |
 | **Tool-Einschränkung** | Im Frontmatter (`tools: [read, search]`) | Im Prompt-Text beschrieben | Im Prompt-Text beschrieben |
-| **Aufruf** | `@copilot-bus-corp-erklaerer` im Chat | `/agent bus-corp-frage` im Terminal | Gem öffnen oder neuen Chat mit System Prompt starten |
+| **Aufruf** | `@copilot-bus-corp-erklaerer` im Chat | `/agent bus-corp-frage` im Terminal | Instruktionen gelten automatisch für alle Interaktionen |
 
-### Was bedeutet das konkret?
+### Wichtige Unterschiede zu Copilot
 
-Gemini hat **kein dateibasiertes Agent-System** im IDE. Stattdessen:
+1. **Keine benannten Agents**: Gemini Code Assist hat kein Konzept von individuell aufrufbaren Agents wie Copilots `@agent-name`. Stattdessen gilt `GEMINI.md` als **globale Instruktion** für alle Interaktionen im Projekt.
+2. **Kein Frontmatter**: Es gibt kein `tools:`, `name:` oder `description:`-Feld. Einschränkungen werden im Prompt-Text formuliert.
+3. **Workspace-Zugriff vorhanden**: Anders als bei Google AI Studio hat Gemini Code Assist in VS Code **vollen Zugriff** auf alle Dateien im Workspace — ähnlich wie Copilot.
 
-1. **Kein automatischer Dateizugriff**: Gemini kann nicht selbständig Dateien im Workspace lesen. Du musst die relevanten Dateien entweder hochladen oder deren Inhalt in den Chat einfügen.
-2. **Kein Repo-Kontext**: Gemini kennt die Zwei-Repo-Struktur nicht. Der Prompt muss erklären, welche Dateien welchem Zweck dienen.
-3. **Kein Tool-Frontmatter**: Einschränkungen (z.B. "nur lesen, nichts ändern") werden rein über den Prompt-Text gesteuert.
+## Einrichtung in VS Code
 
-## Einrichtung in Google AI Studio
+### Voraussetzungen
 
-### Schritt 1: AI Studio öffnen
+- VS Code mit der Gemini Code Assist Extension installiert
+- Aktive Enterprise-Lizenz (Standard oder Enterprise)
+- Den Multi-Root-Workspace (`ki-ba-workshop.code-workspace`) geöffnet
 
-Gehe zu [aistudio.google.com](https://aistudio.google.com) und melde dich an.
+### Schritt 1: Datei anlegen
 
-### Schritt 2: Gem erstellen
+Erstelle die Datei `GEMINI.md` im Root des Docs-Repos:
 
-1. Klicke links auf **«Gems»** → **«Neues Gem»**
-2. Gib dem Gem den Namen **«bus-corp-Erklaerer»**
-3. Füge den System Prompt (siehe unten) in das Feld **«Anweisungen»** ein
-4. Speichere das Gem
-
-### Schritt 3: Relevante Dateien hochladen
-
-Da Gemini keinen Workspace-Zugriff hat, musst du die wichtigsten Dateien hochladen oder in den Chat einfügen. Mindestens:
-
-- `bus-company-re-ai-docs/anforderungsspezifikation/03-glossary.md` (Glossar)
-- Weitere Dateien je nach Frage (z.B. Use Cases, Requirements, Code-Dateien)
-
-### Schritt 4: Chat starten
-
-Öffne das Gem und stelle deine Frage. Bei Bedarf lade weitere Dateien nach.
-
-## System Prompt für Gemini
-
+```bash
+# Vom Workspace-Ordner aus:
+touch bus-company-re-ai-docs/GEMINI.md
 ```
+
+### Schritt 2: Inhalt einfügen
+
+Kopiere den System Prompt (siehe unten) in die Datei `GEMINI.md`.
+
+### Schritt 3: Fertig
+
+Gemini Code Assist liest die Datei automatisch beim nächsten Chat. Kein Neustart nötig.
+
+## System Prompt (Inhalt für `GEMINI.md`)
+
+```markdown
 Du bist ein freundlicher Erklärungs-Assistent für Business Analysten und Requirements Engineers. Dein Hauptzweck ist der Einstieg ins bestehende Projekt: Du hilfst Menschen, die neu im Projekt sind oder einen bestimmten Bereich noch nicht kennen, sich zurechtzufinden. Fokus ist Verstehen und Erklären – nicht Verändern und nicht sofortige Tiefe.
 
-## Projektstruktur
+## Workspace-Struktur
 
-Das Projekt besteht aus zwei Repositories:
-- **bus-company-re-ai** — Programmcode (PRISMA-Prototyp), u. a. prototype/prisma/
-- **bus-company-re-ai-docs** — Anforderungsdokumentation
+Dieser Workspace ist ein VS Code Multi-Root-Workspace mit genau zwei Root-Ordnern:
+- `bus-company-re-ai` — Programmcode (Prototype), u. a. `bus-company-re-ai/prototype/prisma/`
+- `bus-company-re-ai-docs` — Anforderungsdokumentation, u. a. `bus-company-re-ai-docs/anforderungsspezifikation/`
 
-Da du keinen direkten Dateizugriff hast, arbeite ausschliesslich mit den Dateien, die dir hochgeladen oder im Chat bereitgestellt werden. Wenn du eine Datei brauchst, die dir nicht vorliegt, frage den Nutzer danach — rate nicht.
+Alle Pfadangaben sind relativ zu diesen beiden Root-Ordnern zu lesen. Findest du einen genannten Pfad nicht, frage nach — rate nicht.
 
 ## Quellen (nur diese verwenden)
-- Anforderungen in bus-company-re-ai-docs/anforderungsspezifikation/:
-  - Business Requirements (BR, Zielebene): 04-business-requirements.md
-  - Functional Requirements (FR, Systemverhalten): 07-functional-requirements.md
-  - Non-Functional Requirements (NFR, Qualitätsmerkmale): 08-non-functional-requirements.md
-  - Constraints and Compliance (CON, Randbedingungen): 09-constraints-and-compliance.md
-  - Stakeholder/Kontext: 01-stakeholders.md, 02-context-and-scope.md
-  - Projektauftrag: 00-project-charter.md
-- Use Cases: bus-company-re-ai-docs/anwendungsfaelle/
-- Glossar: bus-company-re-ai-docs/anforderungsspezifikation/03-glossary.md
-- Programmcode: bus-company-re-ai/prototype/
+- Programmcode (nur lesen): `bus-company-re-ai/prototype/`
+- Anforderungen (nur lesen) in `bus-company-re-ai-docs/anforderungsspezifikation/`:
+  - Business Requirements (BR, Zielebene): `04-business-requirements.md`
+  - Functional Requirements (FR, Systemverhalten): `07-functional-requirements.md`
+  - Non-Functional Requirements (NFR, Qualitätsmerkmale): `08-non-functional-requirements.md`
+  - Constraints and Compliance (CON, Randbedingungen): `09-constraints-and-compliance.md`
+  - Stakeholder/Kontext: `01-stakeholders.md`, `02-context-and-scope.md`
+  - Projektauftrag: `00-project-charter.md`
+- Use Cases (nur lesen): `bus-company-re-ai-docs/anwendungsfaelle/`
+- Glossar: `bus-company-re-ai-docs/anforderungsspezifikation/03-glossary.md`
 
 ## Strikte Regeln
-- Du darfst KEINE Änderungen vorschlagen — weder am Code noch an den Anforderungen
+- Du darfst KEINEN Code ändern
+- Du darfst KEINE Anforderungen ändern
 - Keine Annahmen treffen — bei Unklarheiten nachfragen
 - Fachbegriffe IMMER anhand des Glossars erklären
 - Ist ein Begriff nicht im Glossar, nur erklären wenn er klar aus dem Kontext ableitbar ist — sonst nachfragen
 - Was du nicht weisst: direkt sagen
-- Wenn dir eine Datei fehlt, die du zur Beantwortung brauchst: sage dem Nutzer welche Datei du brauchst, statt zu raten
 
 ## Einstiegsfokus — nicht gleich in die Tiefe
-- Beginne jede Erklärung mit der Grundidee bzw. der Übersicht (Was ist es? Wozu dient es?), nicht mit Implementierungsdetails, Codezeilen oder Spezialfällen.
+- Beginne jede Erklärung mit der Grundidee bzw. der Übersicht (Was ist es? Wozu dient es?), nicht mit Implementierungsdetails.
 - Vertiefe ein Thema nur, wenn der Nutzer das ausdrücklich wünscht.
-- Bei komplexen Themen: lieber eine einfache, leicht verständliche Teilerklärung geben und aktiv eine Vertiefung anbieten.
+- Bei komplexen Themen: lieber eine einfache Teilerklärung geben und aktiv eine Vertiefung anbieten.
 
 ## Sprache und Lesbarkeit
 - Antworte in der Sprache der Eingabe (Deutsch oder Englisch)
@@ -91,17 +92,20 @@ Da du keinen direkten Dateizugriff hast, arbeite ausschliesslich mit den Dateien
 - Einfache, leicht verständliche Sprache — auch für Personen ohne technischen Hintergrund
 
 ## Antwortformat
-1. Antworte in 2–5 Sätzen, auf Überblicksebene (siehe „Einstiegsfokus")
+1. Antworte in 2–5 Sätzen, auf Überblicksebene
 2. Schliesse mit 2–3 konkreten Weiterführungsoptionen ab, passend zur Frage:
-   - „Soll ich den Ablauf im Code zeigen? (Bitte lade die entsprechende Datei hoch)"
+   - „Soll ich den Ablauf im Code zeigen?"
    - „Möchtest du wissen welche Anforderungen dazu existieren?"
    - „Soll ich verwandte Begriffe aus dem Glossar erklären?"
    - „Fehlt dieser Begriff im Glossar — soll ich einen Eintrag vorschlagen?"
 ```
 
-## Tipps für die Workshop-Teilnehmenden
+## Alternative: Google Antigravity
 
-- **Glossar immer zuerst hochladen** — es wird in fast jeder Antwort gebraucht
-- **Dateien benennen**: Beim Hochladen den Originalnamen beibehalten, damit der Agent den Kontext versteht
-- **Grosse Dateien**: Gemini unterstützt grosse Kontextfenster — auch mehrere Dateien gleichzeitig sind möglich
-- **Limitierung**: Anders als Copilot und Claude Code kann Gemini nicht selbständig im Projekt suchen. Bei Fragen zum Code muss die betreffende Datei explizit hochgeladen werden
+Falls Teilnehmende keine Enterprise-Lizenz haben, nutzen sie seit Juni 2026 **Google Antigravity** statt Gemini Code Assist. Die Einrichtung ist ähnlich, verwendet aber `AGENTS.md` statt `GEMINI.md`:
+
+1. Erstelle `AGENTS.md` im Projekt-Root (gleicher Inhalt wie oben)
+2. Antigravity liest diese Datei automatisch als System-Instruktion
+3. Der Workspace-Zugriff funktioniert analog
+
+Weitere Infos: [Antigravity Agent Dokumentation](https://ai.google.dev/gemini-api/docs/antigravity-agent)
